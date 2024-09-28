@@ -1,19 +1,35 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
 
-publish {
-  userOrg = 'karthikkompelli'
-  groupId = 'com.karthikkompelli'
-  artifactId = 'android-pdf-viewer'
-  uploadName = 'AndroidPdfViewer'
-  publishVersion = '3.2.0-beta.1'
-  desc = 'AndroidPdfViewer'
-  dryRun = false
-  website = 'https://github.com/karthikkompelli/AndroidPdfViewer'
+//apply plugin: 'com.novoda.bintray-release'
+//apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.jfrog.bintray'
+
+//publish {
+//  userOrg = 'karthikkompelli'
+//  groupId = 'com.karthikkompelli'
+//  artifactId = 'android-pdf-viewer'
+//  uploadName = 'AndroidPdfViewer'
+//  publishVersion = '3.2.0-beta.1'
+//  desc = 'AndroidPdfViewer'
+//  dryRun = false
+//  website = 'https://github.com/karthikkompelli/AndroidPdfViewer'
+//}
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.karthikkompelli'
+            artifactId = 'android-pdf-viewer'
+            version = "3.2.0-beta.1"
+            pom {
+                description = 'AndroidPdfViewer'
+            }
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
 }
-
 //ext {
 //    bintrayRepo = 'maven'
 //    bintrayName = 'android-pdf-viewer'
@@ -39,14 +55,17 @@ publish {
 //}
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 30
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 28
-        versionCode 1
-        versionName "3.2.0-beta.1"
+        targetSdkVersion 30
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    namespace 'com.github.barteksc.pdfviewer'
 
 }
 
