@@ -47,8 +47,8 @@ import org.androidannotations.annotations.ViewById;
 
 import java.util.List;
 
-@EActivity(R.layout.activity_main)
-@OptionsMenu(R.menu.options)
+//@EActivity(R.layout.activity_main)
+//@OptionsMenu(R.menu.options)
 public class PDFViewActivity extends AppCompatActivity implements OnPageChangeListener, OnLoadCompleteListener,
         OnPageErrorListener {
 
@@ -71,7 +71,7 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
 
     String pdfFileName;
 
-    @OptionsItem(R.id.pickFile)
+//    @OptionsItem(R.id.pickFile)
     void pickFile() {
         int permissionCheck = ContextCompat.checkSelfPermission(this,
                 READ_EXTERNAL_STORAGE);
