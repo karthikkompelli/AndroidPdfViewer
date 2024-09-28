@@ -1,4 +1,18 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+publish {
+  userOrg = 'karthikkompelli'
+  groupId = 'com.karthikkompelli'
+  artifactId = 'android-pdf-viewer'
+  uploadName = 'AndroidPdfViewer'
+  publishVersion = '3.2.0-beta.1'
+  desc = 'AndroidPdfViewer'
+  dryRun = false
+  website = 'https://github.com/karthikkompelli/AndroidPdfViewer'
+}
 
 ext {
     bintrayRepo = 'maven'
