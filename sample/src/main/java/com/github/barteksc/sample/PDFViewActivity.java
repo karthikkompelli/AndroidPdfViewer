@@ -37,13 +37,13 @@ import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
 import com.github.barteksc.pdfviewer.util.FitPolicy;
 import com.shockwave.pdfium.PdfDocument;
 
-import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.NonConfigurationInstance;
-import org.androidannotations.annotations.OnActivityResult;
-import org.androidannotations.annotations.OptionsItem;
-import org.androidannotations.annotations.OptionsMenu;
-import org.androidannotations.annotations.ViewById;
+//import org.androidannotations.annotations.AfterViews;
+//import org.androidannotations.annotations.EActivity;
+//import org.androidannotations.annotations.NonConfigurationInstance;
+//import org.androidannotations.annotations.OnActivityResult;
+//import org.androidannotations.annotations.OptionsItem;
+//import org.androidannotations.annotations.OptionsMenu;
+//import org.androidannotations.annotations.ViewById;
 
 import java.util.List;
 
@@ -60,13 +60,13 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
     public static final String SAMPLE_FILE = "sample.pdf";
     public static final String READ_EXTERNAL_STORAGE = "android.permission.READ_EXTERNAL_STORAGE";
 
-    @ViewById
+//    @ViewById
     PDFView pdfView;
 
-    @NonConfigurationInstance
+//    @NonConfigurationInstance
     Uri uri;
 
-    @NonConfigurationInstance
+//    @NonConfigurationInstance
     Integer pageNumber = 0;
 
     String pdfFileName;
@@ -100,7 +100,7 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
         }
     }
 
-    @AfterViews
+//    @AfterViews
     void afterViews() {
         pdfView.setBackgroundColor(Color.LTGRAY);
         if (uri != null) {
@@ -140,7 +140,7 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
                 .load();
     }
 
-    @OnActivityResult(REQUEST_CODE)
+//    @OnActivityResult(REQUEST_CODE)
     public void onResult(int resultCode, Intent intent) {
         if (resultCode == RESULT_OK) {
             uri = intent.getData();

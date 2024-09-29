@@ -55,11 +55,11 @@ publishing {
 //}
 
 android {
-    compileSdkVersion 30
+    compileSdk 30
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 30
+        minSdk 14
+        targetSdk 30
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
